@@ -6,13 +6,13 @@ const cors = require('cors')
 const morgan = require('morgan')
 
 const app = express()
-app.use(morgan('combine'))
+app.use(morgan('combined'))
 app.use(bodyParser.json())
 app.use(cors())
 
-app.get('/status', (req, res) => {
+app.post('/register', (req, res) => {
   res.send({
-    message: 'hello world!'
+    message: `Welcom in websit ${req.body.email} Have fun! and ${req.body.password}`
   })
 })
 
