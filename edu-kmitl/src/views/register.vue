@@ -1,26 +1,56 @@
 <template>
-  <div class="register">
-    <h1>register</h1>
-
-    <input
-     type ="email"
-     name="email"
-     v-model="email"
-     placeholder="email"
-    />
-    <input
-     type ="password"
-     name="password"
-     v-model="Password"
-     placeholder="password"
-    />
-    <br>
-    <div class="error" v-html="error" />
-    <br>
-    <button
-    @click="register">Register</button>
-
-  </div>
+<div id="app">
+  <v-app id="inspire">
+    <v-content>
+      <v-container fluid fill-height>
+        <v-layout align-center justify-center>
+          <v-flex xs12 sm8 md4>
+            <v-card class="elevation-12">
+              <v-toolbar dark color="primary">
+                <v-toolbar-title>Register</v-toolbar-title>
+                <v-spacer></v-spacer>
+                <v-tooltip bottom>
+                  <v-btn
+                    icon
+                    large
+                    :href="source"
+                    target="_blank"
+                    slot="activator"
+                  >
+                  </v-btn>
+                </v-tooltip>
+              </v-toolbar>
+              <v-card-text>
+                <v-form>
+                  <v-text-field
+                  prepend-icon="email"
+                  name="email"
+                  label="email"
+                  type="text"
+                  v-model="email">
+                  </v-text-field>
+                  <v-text-field
+                  prepend-icon="lock"
+                  name="password"
+                  label="Password"
+                  id="password"
+                  type="password"
+                  v-model="Password"></v-text-field>
+                </v-form>
+                <div class="error" v-html="error">
+                </div>
+              </v-card-text>
+              <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn color="primary" @click="register">Register</v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </v-content>
+  </v-app>
+</div>
 </template>
 
 <script>
@@ -51,6 +81,6 @@ export default{
 
 <style scoped>
 .error{
-  color: red;
+  color: rgb(255, 255, 255);
 }
 </style>

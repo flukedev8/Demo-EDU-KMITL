@@ -1,17 +1,21 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>|
-      <router-link to="/register">Register</router-link>
-    </div>
-    <router-view/>
-  </div>
+<div id="app">
+   <v-toolbar>
+    <v-toolbar-side-icon></v-toolbar-side-icon>
+    <v-toolbar-title>Education Community KMITL</v-toolbar-title>
+    <v-spacer></v-spacer>
+    <v-toolbar-items class="hidden-sm-and-down">
+      <v-btn flat to="/">Home</v-btn>
+      <v-btn flat to="/about">About</v-btn>
+      <v-btn flat to="/register">Register</v-btn>
+    </v-toolbar-items>
+  </v-toolbar>
+  <router-view/>
+</div>
 </template>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
