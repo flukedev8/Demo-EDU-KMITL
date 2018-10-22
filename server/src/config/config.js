@@ -15,5 +15,8 @@ module.exports = {
     acquire: 30000,
     idle: 10000
   },
-  operatorsAliases: false
+  operatorsAliases: false,
+  authentication: {
+    jwtSecret: process.env.JWT_SECRET || 'secret'
+  }
 }
