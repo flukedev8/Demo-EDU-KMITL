@@ -35,7 +35,6 @@ module.exports = {
       }
 
       const isPasswordValid = await user.comparePassword(Password)
-      console.log(isPasswordValid)
       if (!isPasswordValid) {
         return res.status(403).send({
           error: 'ข้อมูลในการ login ไม่ถูกต้อง กรุณาตรวจสอบ Password อีกครั้ง'
