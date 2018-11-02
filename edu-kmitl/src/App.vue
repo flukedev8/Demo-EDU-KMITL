@@ -40,11 +40,17 @@
         class="hidden-sm-and-down"
       ></v-text-field>
      <v-spacer></v-spacer>
-     <v-toolbar-items class="hidden-sm-and-down">
+    <v-toolbar-items class="hidden-sm-and-down">
        <v-btn flat to="/">Home</v-btn>
        <v-btn flat to="/about">About</v-btn>
-       <v-btn flat to="/register">Register</v-btn>
-        <v-btn flat to="/login">Login</v-btn>
+    </v-toolbar-items>
+     <v-toolbar-items class="hidden-sm-and-down">
+       <v-btn flat to="/register"
+       v-if="!$store.state.isUserLoggedIn"
+       >Register</v-btn>
+        <v-btn flat to="/login"
+        v-if="!$store.state.isUserLoggedIn"
+        >Login</v-btn>
     </v-toolbar-items>
     </v-toolbar>
       <v-content>
