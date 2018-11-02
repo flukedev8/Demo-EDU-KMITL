@@ -24,6 +24,14 @@
             <v-list-tile-title>Register</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
+        <v-list-tile to="/login">
+          <v-list-tile-action>
+          <v-icon>lock</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+          <v-list-tile-title>login</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
       </v-list>
     </v-navigation-drawer>
     <v-toolbar :clipped-left="$vuetify.breakpoint.lgAndUp" color="indigo" dark fixed app class="orange darken-1">
@@ -51,6 +59,9 @@
         <v-btn flat to="/login"
         v-if="!$store.state.isUserLoggedIn"
         >Login</v-btn>
+        <v-btn flat
+        v-if="$store.state.isUserLoggedIn"
+        @click="logout">Log Out</v-btn>
     </v-toolbar-items>
     </v-toolbar>
       <v-content>
@@ -72,6 +83,15 @@ export default {
   }),
   props: {
     source: String
+  },
+  methods: {
+    logout () {
+      this.$store.dispatch('setToken', null)
+      this.$store.dispatch('setUser', null)
+      this.$router.push({
+        name: 'home'
+      })
+    }
   }
 }
 </script>
