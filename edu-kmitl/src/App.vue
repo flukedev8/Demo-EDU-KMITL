@@ -16,7 +16,7 @@
             <v-list-tile-title>Home</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile to="/register">
+        <v-list-tile to="/register"   v-if="!$store.state.isUserLoggedIn">
           <v-list-tile-action>
             <v-icon>contact_mail</v-icon>
           </v-list-tile-action>
@@ -24,12 +24,20 @@
             <v-list-tile-title>Register</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile to="/login">
+        <v-list-tile to="/login" v-if="!$store.state.isUserLoggedIn">
           <v-list-tile-action>
           <v-icon>lock</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
           <v-list-tile-title>login</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-list-tile @click="logout" v-if="$store.state.isUserLoggedIn">
+          <v-list-tile-action>
+          <v-icon>unlock</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+          <v-list-tile-title>logout</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
@@ -69,9 +77,6 @@
           <router-view/>
         </v-container>
       </v-content>
-      <v-footer color="indigo" app class="orange darken-1">
-      <span class="white--text">&copy; 2017</span>
-    </v-footer>
     </v-app>
 </div>
 </template>

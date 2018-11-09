@@ -1,9 +1,5 @@
 <template>
-  <v-carousel
-    delimiter-icon="stop"
-    prev-icon="mdi-arrow-left"
-    next-icon="mdi-arrow-right"
-  >
+  <v-carousel hide-controls>
     <v-carousel-item
       v-for="(item,i) in items"
       :key="i"
