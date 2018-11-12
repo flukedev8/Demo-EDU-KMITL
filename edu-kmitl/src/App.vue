@@ -16,6 +16,22 @@
             <v-list-tile-title>Home</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
+        <v-list-tile to="/about"   v-if="!$store.state.isUserLoggedIn">
+          <v-list-tile-action>
+            <v-icon>help</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>About</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-list-tile to="/meetup">
+          <v-list-tile-action>
+            <v-icon>people_outline</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>meetup</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
         <v-list-tile to="/register"   v-if="!$store.state.isUserLoggedIn">
           <v-list-tile-action>
             <v-icon>contact_mail</v-icon>
@@ -32,9 +48,17 @@
           <v-list-tile-title>login</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
+        <v-list-tile to="/Tobe" v-if="$store.state.isUserLoggedIn">
+          <v-list-tile-action>
+          <v-icon>school</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+          <v-list-tile-title>To Be Teacher</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
         <v-list-tile @click="logout" v-if="$store.state.isUserLoggedIn">
           <v-list-tile-action>
-          <v-icon>unlock</v-icon>
+          <v-icon>exit_to_app</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
           <v-list-tile-title>logout</v-list-tile-title>
@@ -56,11 +80,15 @@
         class="hidden-sm-and-down"
       ></v-text-field>
      <v-spacer></v-spacer>
-    <v-toolbar-items class="hidden-sm-and-down">
-       <v-btn flat to="/">Home</v-btn>
-       <v-btn flat to="/about">About</v-btn>
-    </v-toolbar-items>
      <v-toolbar-items class="hidden-sm-and-down">
+       <v-btn flat to="/"
+       v-if="!$store.state.isUserLoggedIn"
+       >Home</v-btn>
+       <v-btn flat to="/about"
+         v-if="!$store.state.isUserLoggedIn" >About</v-btn>
+       <v-btn flat to="/meetup" >meet up</v-btn>
+       <v-btn flat to="/Tobe"
+         v-if="$store.state.isUserLoggedIn">To Be Teacher</v-btn>
        <v-btn flat to="/register"
        v-if="!$store.state.isUserLoggedIn"
        >Register</v-btn>

@@ -32,6 +32,16 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: Login
+    },
+    {
+      path: '/Tobe',
+      name: 'Tobe',
+      component: () => import('./views/Tobe.vue')
+    },
+    {
+      path: '/meetup',
+      name: 'meetup',
+      component: () => import('./views/meetup.vue')
     }
   ]
 })

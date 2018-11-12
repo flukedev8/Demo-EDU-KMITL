@@ -4,7 +4,7 @@
     tile
   >
     <v-toolbar
-      color="cyan"
+      color="orange darken-1"
       dark
     >
 
