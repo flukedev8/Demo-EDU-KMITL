@@ -42,6 +42,11 @@ export default new Router({
       path: '/meetup',
       name: 'meetup',
       component: () => import('./views/meetup.vue')
+    },
+    {
+      path: '/mycourse',
+      name: 'mycourse',
+      component: () => import('./views/mycourse.vue')
     }
   ]
 })

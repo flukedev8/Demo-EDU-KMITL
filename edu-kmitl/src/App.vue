@@ -24,6 +24,14 @@
             <v-list-tile-title>About</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
+        <v-list-tile to="/mycourse" v-if="$store.state.isUserLoggedIn">
+          <v-list-tile-action>
+          <v-icon>videocam</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+          <v-list-tile-title>My Course</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
         <v-list-tile to="/meetup">
           <v-list-tile-action>
             <v-icon>people_outline</v-icon>
@@ -68,7 +76,7 @@
     </v-navigation-drawer>
     <v-toolbar :clipped-left="$vuetify.breakpoint.lgAndUp" color="indigo" dark fixed app class="orange darken-1">
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-     <v-toolbar-title style="width: 300px" class="ml-0 pl-3" >
+     <v-toolbar-title style="width: 350px" class="ml-0 pl-3" >
        Education Community KMITL
        </v-toolbar-title>
      <v-text-field
@@ -86,6 +94,8 @@
        >Home</v-btn>
        <v-btn flat to="/about"
          v-if="!$store.state.isUserLoggedIn" >About</v-btn>
+       <v-btn flat to="/mycourse"
+         v-if="$store.state.isUserLoggedIn">My Course</v-btn>
        <v-btn flat to="/meetup" >meet up</v-btn>
        <v-btn flat to="/Tobe"
          v-if="$store.state.isUserLoggedIn">To Be Teacher</v-btn>
