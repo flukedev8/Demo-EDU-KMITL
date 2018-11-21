@@ -13,82 +13,77 @@
     </v-toolbar>
 
     <v-container
-      v-for="type in types"
-      :key="type"
+
       fluid
       grid-list-md
       grey
       lighten-4
     >
-      <v-subheader>{{ type }}</v-subheader>
-
-      <v-layout row wrap>
-        <v-spacer></v-spacer>
-        <v-flex
-          v-for="card in cards"
-          :key="card"
-          xs12
-          sm6
-          md4
+    <v-layout row>
+    <v-flex xs12 sm3
+    v-for="course in courses" :key="course.title"
+    >
+      <v-card>
+        <v-img
+          src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+          height="350px"
         >
-          <v-card>
-            <v-img
-              :src="`https://picsum.photos/200/300?image=${getImage()}`"
-              height="300px"
-            >
-              <span
-                class="headline white--text pl-3 pt-3"
-                v-text="card.title"
-              ></span>
-            </v-img>
+        </v-img>
 
-            <v-card-actions class="white justify-center">
-              <v-btn
-                v-for="(social, i) in socials"
-                :key="i"
-                :color="social.color"
-                class="white--text"
-                fab
-                icon
-                small
-              >
-                <v-icon>{{ social.icon }}</v-icon>
-              </v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-flex>
-      </v-layout>
+        <v-card-title >
+          <div>
+            <div class="headline">{{course.title}}</div><br>
+            <span class="grey--text">รหัสวิชา {{course.number}}</span><br>
+            <span class="grey--text">ชื่ออาจารย์ประจำวิชา {{course.professor}}</span><br>
+            <span >รายละเอียด {{course.Abstract}}</span>
+          </div>
+        </v-card-title>
+
+        <v-card-actions>
+          <v-btn flat>Share</v-btn>
+          <v-btn flat color="purple">Explore</v-btn>
+          <v-spacer></v-spacer>
+        </v-card-actions>
+      </v-card>
+    </v-flex>
+  </v-layout>
     </v-container>
   </v-card>
 </template>
 
 <script>
+import Courseservice from '@/services/courseservice'
 export default {
   data: () => ({
-    types: ['Places to Be', 'Places to See'],
-    cards: ['Good', 'Best', 'Finest'],
-    socials: [
+    courses: [
       {
-        icon: 'fab fa-facebook',
-        color: 'indigo'
+        title: 'test',
+        number: '501234',
+        professor: 'mr.test',
+        Abstract: 'test in Abstract '
       },
       {
-        icon: 'fab fa-linkedin',
-        color: 'cyan darken-1'
+        title: 'test2',
+        number: '501234/2',
+        professor: 'mr.test2',
+        Abstract: 'test in Abstract anything'
       },
       {
-        icon: 'fab fa-instagram',
-        color: 'red lighten-3'
+        title: 'test2',
+        number: '501234/2',
+        professor: 'mr.test2',
+        Abstract: 'test in Abstract anything'
+      },
+      {
+        title: 'test2',
+        number: '501234/2',
+        professor: 'mr.test2',
+        Abstract: 'test in Abstract anything'
       }
     ]
   }),
-
-  methods: {
-    getImage () {
-      const min = 550
-      const max = 560
-      return Math.floor(Math.random() * (max - min + 1)) + min
-    }
+  mounted () {
+    this.course = await Courseservice.index()
   }
 }
 

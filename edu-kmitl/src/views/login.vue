@@ -2,7 +2,7 @@
         <v-layout align-center justify-center>
           <v-flex xs12 sm8 md4>
             <v-card class="elevation-12">
-              <v-toolbar dark color="primary">
+              <v-toolbar dark color="orange darken-1">
                 <v-toolbar-title>Login</v-toolbar-title>
                 <v-spacer></v-spacer>
                 <v-tooltip bottom>
@@ -38,7 +38,7 @@
               </v-card-text>
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color="primary" @click="login">Login</v-btn>
+                <v-btn color="orange darken-1" @click="login">Login</v-btn>
               </v-card-actions>
             </v-card>
           </v-flex>
