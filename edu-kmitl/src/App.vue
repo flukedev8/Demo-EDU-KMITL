@@ -29,17 +29,46 @@
           <v-icon>videocam</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-          <v-list-tile-title>My Course</v-list-tile-title>
+          <v-list-tile-title>My Classroom</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile to="/meetup">
+         <v-list-tile to="/meetup" v-if="!$store.state.isUserLoggedIn">
           <v-list-tile-action>
-            <v-icon>people_outline</v-icon>
+          <v-icon>people_outline</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>meetup</v-list-tile-title>
+          <v-list-tile-title>Meetup</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
+           <v-list-group v-if="$store.state.isUserLoggedIn"
+          >
+            <v-list-tile slot="activator" to="/meetup">
+             <v-list-tile-action>
+               <v-icon>people_outline</v-icon>
+               </v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>
+                  meetup
+                </v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+        <v-list-tile to="#" v-if="$store.state.isUserLoggedIn">
+          <v-list-tile-action>
+          <v-icon>people</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+          <v-list-tile-title>My meetup</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+         <v-list-tile to="#" v-if="$store.state.isUserLoggedIn">
+          <v-list-tile-action>
+          <v-icon>add</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+          <v-list-tile-title>Create Meetup</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+          </v-list-group>
         <v-list-tile to="/register"   v-if="!$store.state.isUserLoggedIn">
           <v-list-tile-action>
             <v-icon>contact_mail</v-icon>
@@ -56,7 +85,9 @@
           <v-list-tile-title>login</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile to="/Tobe" v-if="$store.state.isUserLoggedIn">
+        <v-list-group v-if="$store.state.isUserLoggedIn"
+          >
+          <v-list-tile slot="activator" to="/Tobe" v-if="$store.state.isUserLoggedIn">
           <v-list-tile-action>
           <v-icon>school</v-icon>
           </v-list-tile-action>
@@ -64,6 +95,23 @@
           <v-list-tile-title>To Be Teacher</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
+         <v-list-tile to="#" v-if="$store.state.isUserLoggedIn">
+          <v-list-tile-action>
+          <v-icon>videocam</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+          <v-list-tile-title>My Course</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-list-tile to="#" v-if="$store.state.isUserLoggedIn">
+          <v-list-tile-action>
+          <v-icon>add</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+          <v-list-tile-title>Create Course</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+          </v-list-group>
         <v-list-tile @click="logout" v-if="$store.state.isUserLoggedIn">
           <v-list-tile-action>
           <v-icon>exit_to_app</v-icon>
@@ -95,7 +143,7 @@
        <v-btn flat to="/about"
          v-if="!$store.state.isUserLoggedIn" >About</v-btn>
        <v-btn flat to="/mycourse"
-         v-if="$store.state.isUserLoggedIn">My Course</v-btn>
+         v-if="$store.state.isUserLoggedIn">My Classroom</v-btn>
        <v-btn flat to="/meetup" >meet up</v-btn>
        <v-btn flat to="/Tobe"
          v-if="$store.state.isUserLoggedIn">To Be Teacher</v-btn>
@@ -143,19 +191,6 @@ export default {
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
 }
 </style>

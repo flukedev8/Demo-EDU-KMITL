@@ -1,12 +1,15 @@
 <template>
-  <div class="Tobeteacher">
-    <h1>This is an Meetup page</h1>
+  <div class="meetup">
+    <panalmeetup />
   </div>
 </template>
 
 <script>
+import Panalmeetup from '@/components/Panalmeetup.vue'
 export default {
-
+  components: {
+    Panalmeetup
+  }
 }
 </script>
 

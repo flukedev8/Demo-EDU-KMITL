@@ -8,8 +8,16 @@
       dark
     >
 
-      <v-toolbar-title>Course</v-toolbar-title>
-
+      <v-toolbar-title>Meetup</v-toolbar-title>
+ <v-spacer></v-spacer>
+    <v-text-field
+        flat
+        solo-inverted
+        hide-details
+        prepend-inner-icon="search"
+        label="Search"
+        class="hidden-sm-and-down"
+      ></v-text-field>
     </v-toolbar>
 
     <v-container
@@ -32,15 +40,15 @@
         <v-card-title >
           <div>
             <div class="headline">{{course.title}}</div><br>
-            <span class="grey--text">รหัสวิชา {{course.number}}</span><br>
-            <span class="grey--text">ชื่ออาจารย์ประจำวิชา {{course.professor}}</span><br>
+            <span class="grey--text">วันที่ {{course.date}}</span><br>
+            <span class="grey--text">เวลา {{course.time}}</span><br>
             <span >รายละเอียด {{course.Abstract}}</span>
           </div>
         </v-card-title>
 
         <v-card-actions>
-          <v-btn flat>view</v-btn>
-          <v-btn flat color="purple">ลงทะเบียนเรียน</v-btn>
+          <v-btn flat>สนใจ</v-btn>
+          <v-btn flat color="purple">เข้าร่วม</v-btn>
           <v-spacer></v-spacer>
         </v-card-actions>
       </v-card>
@@ -55,27 +63,27 @@ export default {
   data: () => ({
     courses: [
       {
-        title: 'test',
-        number: '501234',
-        professor: 'mr.test',
+        title: 'ชื่องานที่จะจัด meetup1',
+        date: '01/02/2562',
+        time: '09.00 น. - 12.00 น.',
         Abstract: 'test in Abstract '
       },
       {
-        title: 'test2',
-        number: '501234/2',
-        professor: 'mr.test2',
+        title: 'ชื่องานที่จะจัด meetup2',
+        date: '01/02/2562',
+        time: '09.00 น. - 12.00 น.',
         Abstract: 'test in Abstract anything'
       },
       {
-        title: 'test2',
-        number: '501234/2',
-        professor: 'mr.test2',
+        title: 'ชื่องานที่จะจัด meetup3',
+        date: '01/02/2562',
+        time: '09.00 น. - 12.00 น.',
         Abstract: 'test in Abstract anything'
       },
       {
-        title: 'test2',
-        number: '501234/2',
-        professor: 'mr.test2',
+        title: 'ชื่องานที่จะจัด meetup4',
+        date: '01/02/2562',
+        time: '09.00 น. - 12.00 น.',
         Abstract: 'test in Abstract anything'
       }
     ]
