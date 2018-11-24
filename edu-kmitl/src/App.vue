@@ -24,7 +24,7 @@
             <v-list-tile-title>About</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile to="/mycourse" v-if="$store.state.isUserLoggedIn">
+        <v-list-tile to="/myclassroom" v-if="$store.state.isUserLoggedIn">
           <v-list-tile-action>
           <v-icon>videocam</v-icon>
           </v-list-tile-action>
@@ -142,7 +142,7 @@
        >Home</v-btn>
        <v-btn flat to="/about"
          v-if="!$store.state.isUserLoggedIn" >About</v-btn>
-       <v-btn flat to="/mycourse"
+       <v-btn flat to="/myclassroom"
          v-if="$store.state.isUserLoggedIn">My Classroom</v-btn>
        <v-btn flat to="/meetup" >meet up</v-btn>
        <v-btn flat to="/Tobe"

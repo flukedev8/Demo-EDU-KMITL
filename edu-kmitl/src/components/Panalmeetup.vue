@@ -21,7 +21,6 @@
     </v-toolbar>
 
     <v-container
-    v-for="i in 2" :key="i=1"
       fluid
       grid-list-md
       grey
@@ -32,7 +31,7 @@
     >
       <v-card>
         <v-img
-          src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+          :src="course.image"
           height="350px"
         >
         </v-img>
@@ -42,13 +41,15 @@
             <div class="headline">{{course.title}}</div><br>
             <span class="grey--text">วันที่ {{course.date}}</span><br>
             <span class="grey--text">เวลา {{course.time}}</span><br>
+            <span class="grey--text">สถานที่ {{course.location}}</span><br>
             <span >รายละเอียด {{course.Abstract}}</span>
           </div>
         </v-card-title>
 
         <v-card-actions>
-          <v-btn flat>สนใจ</v-btn>
-          <v-btn flat color="purple">เข้าร่วม</v-btn>
+          <v-btn flat to="/viewmeetup">view</v-btn>
+          <v-btn flat v-if="$store.state.isUserLoggedIn">สนใจ</v-btn>
+          <v-btn flat color="purple" v-if="$store.state.isUserLoggedIn">เข้าร่วม</v-btn>
           <v-spacer></v-spacer>
         </v-card-actions>
       </v-card>
@@ -66,25 +67,65 @@ export default {
         title: 'ชื่องานที่จะจัด meetup1',
         date: '01/02/2562',
         time: '09.00 น. - 12.00 น.',
-        Abstract: 'test in Abstract '
+        location: 'ศูนย์คอมพิวเตอร์ สจล.ชั้น 1',
+        Abstract: 'test in Abstract ',
+        image: 'https://udemy-images.udemy.com/course/750x422/164058_e914_2.jpg'
       },
       {
         title: 'ชื่องานที่จะจัด meetup2',
         date: '01/02/2562',
         time: '09.00 น. - 12.00 น.',
-        Abstract: 'test in Abstract anything'
+        location: 'ศูนย์คอมพิวเตอร์ สจล.ชั้น 1',
+        Abstract: 'test in Abstract anything',
+        image: 'https://udemy-images.udemy.com/course/750x422/164058_e914_2.jpg'
       },
       {
         title: 'ชื่องานที่จะจัด meetup3',
         date: '01/02/2562',
         time: '09.00 น. - 12.00 น.',
-        Abstract: 'test in Abstract anything'
+        location: 'ศูนย์คอมพิวเตอร์ สจล.ชั้น 1',
+        Abstract: 'test in Abstract anything',
+        image: 'http://shahzaibshafi.com/wp-content/uploads/2016/02/Get-Almost-Every-Udemy-Courses-Free-2.jpg'
       },
       {
         title: 'ชื่องานที่จะจัด meetup4',
         date: '01/02/2562',
         time: '09.00 น. - 12.00 น.',
-        Abstract: 'test in Abstract anything'
+        location: 'ศูนย์คอมพิวเตอร์ สจล.ชั้น 1',
+        Abstract: 'test in Abstract anything',
+        image: 'https://udemy-images.udemy.com/course/750x422/164058_e914_2.jpg'
+      },
+      {
+        title: 'ชื่องานที่จะจัด meetup5',
+        date: '01/02/2562',
+        time: '09.00 น. - 12.00 น.',
+        location: 'ศูนย์คอมพิวเตอร์ สจล.ชั้น 1',
+        Abstract: 'test in Abstract anything',
+        image: 'http://shahzaibshafi.com/wp-content/uploads/2016/02/Get-Almost-Every-Udemy-Courses-Free-2.jpg'
+      },
+      {
+        title: 'ชื่องานที่จะจัด meetup6',
+        date: '01/02/2562',
+        time: '09.00 น. - 12.00 น.',
+        location: 'ศูนย์คอมพิวเตอร์ สจล.ชั้น 1',
+        Abstract: 'test in Abstract anything',
+        image: 'https://udemy-images.udemy.com/course/750x422/164058_e914_2.jpg'
+      },
+      {
+        title: 'ชื่องานที่จะจัด meetup7',
+        date: '01/02/2562',
+        time: '09.00 น. - 12.00 น.',
+        location: 'ศูนย์คอมพิวเตอร์ สจล.ชั้น 1',
+        Abstract: 'test in Abstract anything',
+        image: 'http://shahzaibshafi.com/wp-content/uploads/2016/02/Get-Almost-Every-Udemy-Courses-Free-2.jpg'
+      },
+      {
+        title: 'ชื่องานที่จะจัด meetup8',
+        date: '01/02/2562',
+        time: '09.00 น. - 12.00 น.',
+        location: 'ศูนย์คอมพิวเตอร์ สจล.ชั้น 1',
+        Abstract: 'test in Abstract anything',
+        image: 'https://udemy-images.udemy.com/course/750x422/164058_e914_2.jpg'
       }
     ]
   })

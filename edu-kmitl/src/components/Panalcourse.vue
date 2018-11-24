@@ -13,7 +13,7 @@
     </v-toolbar>
 
     <v-container
-    v-for="i in 2" :key="i=1"
+   
       fluid
       grid-list-md
       grey
@@ -24,7 +24,7 @@
     >
       <v-card>
         <v-img
-          src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+          :src="course.image"
           height="350px"
         >
         </v-img>
@@ -39,8 +39,8 @@
         </v-card-title>
 
         <v-card-actions>
-          <v-btn flat>view</v-btn>
-          <v-btn flat color="purple">ลงทะเบียนเรียน</v-btn>
+          <v-btn flat to="/viewcourse">view</v-btn>
+          <v-btn flat color="purple" v-if="$store.state.isUserLoggedIn">ลงทะเบียนเรียน</v-btn>
           <v-spacer></v-spacer>
         </v-card-actions>
       </v-card>
@@ -58,25 +58,57 @@ export default {
         title: 'test',
         number: '501234',
         professor: 'mr.test',
-        Abstract: 'test in Abstract '
+        Abstract: 'test in Abstract ',
+        image: 'https://udemy-images.udemy.com/course/750x422/164058_e914_2.jpg'
       },
       {
         title: 'test2',
         number: '501234/2',
         professor: 'mr.test2',
-        Abstract: 'test in Abstract anything'
+        Abstract: 'test in Abstract anything',
+        image: 'http://shahzaibshafi.com/wp-content/uploads/2016/02/Get-Almost-Every-Udemy-Courses-Free-2.jpg'
       },
       {
-        title: 'test2',
+        title: 'test3',
         number: '501234/2',
         professor: 'mr.test2',
-        Abstract: 'test in Abstract anything'
+        Abstract: 'test in Abstract anything',
+        image: 'https://udemy-images.udemy.com/course/750x422/567828_67d0.jpg'
       },
       {
-        title: 'test2',
+        title: 'test4',
         number: '501234/2',
         professor: 'mr.test2',
-        Abstract: 'test in Abstract anything'
+        Abstract: 'test in Abstract anything',
+        image: 'https://udemy-images.udemy.com/course/750x422/822444_a6db.jpg'
+      },
+      {
+        title: 'test5',
+        number: '501234/2',
+        professor: 'mr.test2',
+        Abstract: 'test in Abstract anything',
+        image: 'https://udemy-images.udemy.com/course/750x422/822444_a6db.jpg'
+      },
+      {
+        title: 'test6',
+        number: '501234/2',
+        professor: 'mr.test2',
+        Abstract: 'test in Abstract anything',
+        image: 'https://udemy-images.udemy.com/course/750x422/822444_a6db.jpg'
+      },
+      {
+        title: 'test7',
+        number: '501234/2',
+        professor: 'mr.test2',
+        Abstract: 'test in Abstract anything',
+        image: 'http://shahzaibshafi.com/wp-content/uploads/2016/02/Get-Almost-Every-Udemy-Courses-Free-2.jpg'
+      },
+      {
+        title: 'test8',
+        number: '501234/2',
+        professor: 'mr.test2',
+        Abstract: 'test in Abstract anything',
+        image: 'http://shahzaibshafi.com/wp-content/uploads/2016/02/Get-Almost-Every-Udemy-Courses-Free-2.jpg'
       }
     ]
   })
