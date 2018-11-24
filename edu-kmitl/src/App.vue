@@ -52,7 +52,7 @@
                 </v-list-tile-title>
               </v-list-tile-content>
             </v-list-tile>
-        <v-list-tile to="#" v-if="$store.state.isUserLoggedIn">
+        <v-list-tile to="/managemeetup" v-if="$store.state.isUserLoggedIn">
           <v-list-tile-action>
           <v-icon>people</v-icon>
           </v-list-tile-action>
@@ -60,7 +60,7 @@
           <v-list-tile-title>My meetup</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-         <v-list-tile to="#" v-if="$store.state.isUserLoggedIn">
+         <v-list-tile to="/createmeetup" v-if="$store.state.isUserLoggedIn">
           <v-list-tile-action>
           <v-icon>add</v-icon>
           </v-list-tile-action>
