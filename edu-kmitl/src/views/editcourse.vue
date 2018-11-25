@@ -21,44 +21,44 @@
     <v-flex d-flex xs12 sm6>
       <v-form>
         <v-text-field
-         prepend-icon="email"
+         prepend-icon="face"
         name="title"
         label="หัวข้อเรื่อง"
         type="text"
         v-model="title">
        </v-text-field>
       <v-text-field
-       prepend-icon="lock"
+       prepend-icon="dialpad"
        name="number"
         label="รหัสวิชา"
         type="text"
         v-model="number"></v-text-field>
         <v-text-field
-       prepend-icon="lock"
+       prepend-icon="perm_identity"
        name="professor"
         label="อาจารย์ประจำวิชา"
         type="text"
         v-model="professor"></v-text-field>
         <v-text-field
-       prepend-icon="lock"
+       prepend-icon="location_city"
        name="branch"
         label="สาขา"
         type="text"
         v-model="branch"></v-text-field>
       <v-text-field
-       prepend-icon="lock"
+       prepend-icon="domain"
        name="sector"
         label="ภาควิชา "
         type="text"
         v-model="sector"></v-text-field>
       <v-text-field
-       prepend-icon="lock"
+       prepend-icon="school"
        name="faculty"
         label="คณะ "
         type="text"
         v-model="faculty"></v-text-field>
          <v-text-field
-       prepend-icon="lock"
+       prepend-icon="add_to_photos"
        name="image"
         label="อัพโหลดไฟล์ภาพ"
         type="file"
@@ -74,20 +74,19 @@
           value="รายละเอียด: "
           v-model="Description"
         ></v-textarea>
-        
       </v-flex>
      </v-layout>
      <v-layout>
        <form v-on:submit.prevent="addNewTodo">
     <label for="new-todo">ใส่ Link video จาก youtube</label>
     <v-text-field
+    prepend-icon="add_to_queue"
       v-model="newTodoText"
       id="new-todo"
       placeholder="Add Link video"
     ></v-text-field>
     <v-btn color="orange darken-1" @click="addNewTodo" >Add Video เพิ่ม</v-btn>
   </form>
-  
   <ul>
     <li
       is="todo-item"

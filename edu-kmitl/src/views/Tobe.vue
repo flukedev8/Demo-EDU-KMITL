@@ -31,21 +31,21 @@
         v-model="title">
        </v-text-field>
               <v-text-field
-         prepend-icon="email"
+         prepend-icon="account_box"
         name="fristname"
         label="ชื่อจริง"
         type="text"
         v-model="fristname">
        </v-text-field>
               <v-text-field
-         prepend-icon="email"
+         prepend-icon="account_box"
         name="lastname"
         label="นามสกุลจริง"
         type="text"
         v-model="lastname">
        </v-text-field>
          <v-text-field
-       prepend-icon="lock"
+       prepend-icon="add_to_photos"
        name="image"
         label="อัพโหลดไฟล์ภาพ"
         type="file"
