@@ -28,7 +28,7 @@
       <v-icon dark>add</v-icon>
     </v-btn>
     <v-layout row wrap >
-    <v-flex d-flex xs12 sm3  v-for="course in courses" :key="course.title"
+    <v-flex d-flex xs12 sm4  v-for="course in courses" :key="course.title"
     >
       <v-card>
         <v-img
@@ -49,6 +49,7 @@
 
         <v-card-actions>
           <v-btn flat to="/managemeetup/edit">แก้ไขรายละเอียด meetup</v-btn>
+           <v-btn flat color="error" >ลบ Meetup</v-btn>
           <v-spacer></v-spacer>
         </v-card-actions>
       </v-card>

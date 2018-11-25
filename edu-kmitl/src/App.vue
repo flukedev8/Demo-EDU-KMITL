@@ -95,7 +95,7 @@
           <v-list-tile-title>To Be Teacher</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-         <v-list-tile to="#" v-if="$store.state.isUserLoggedIn">
+         <v-list-tile to="/managecourse" v-if="$store.state.isUserLoggedIn">
           <v-list-tile-action>
           <v-icon>videocam</v-icon>
           </v-list-tile-action>
@@ -103,7 +103,7 @@
           <v-list-tile-title>My Course</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile to="#" v-if="$store.state.isUserLoggedIn">
+        <v-list-tile to="/createcourse" v-if="$store.state.isUserLoggedIn">
           <v-list-tile-action>
           <v-icon>add</v-icon>
           </v-list-tile-action>

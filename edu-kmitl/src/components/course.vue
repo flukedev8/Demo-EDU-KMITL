@@ -19,7 +19,7 @@
       lighten-4
     >
     <v-layout row wrap >
-    <v-flex d-flex xs12 sm3  v-for="course in courses" :key="course.title"
+    <v-flex d-flex xs12 sm4  v-for="course in courses" :key="course.title"
     >
       <v-card>
         <v-img

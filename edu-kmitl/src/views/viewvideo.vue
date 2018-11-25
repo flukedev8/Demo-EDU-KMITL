@@ -23,8 +23,8 @@
           <v-card-text>
         <youtube
         :video-id = "youtubeID"
-        :player-width="800"
-        :player-height="600"
+        :player-width="550"
+        :player-height="400"
         >
     </youtube>
     </v-card-text>

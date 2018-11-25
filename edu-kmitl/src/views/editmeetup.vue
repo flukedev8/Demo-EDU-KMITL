@@ -8,7 +8,7 @@
       dark
     >
 
-      <v-toolbar-title>Create Meetup</v-toolbar-title>
+      <v-toolbar-title>Edit Meetup</v-toolbar-title>
     </v-toolbar>
 
     <v-container
