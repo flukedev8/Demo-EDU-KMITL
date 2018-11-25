@@ -72,6 +72,11 @@ export default new Router({
       path: '/createmeetup',
       name: 'createmeetup',
       component: () => import('./views/createmeetup.vue')
+    },
+    {
+      path: '/managemeetup/edit',
+      name: 'managemeetup/edit',
+      component: () => import('./views/editmeetup.vue')
     }
   ]
 })

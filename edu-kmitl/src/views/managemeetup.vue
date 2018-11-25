@@ -48,7 +48,7 @@
         </v-card-title>
 
         <v-card-actions>
-          <v-btn flat to="#">แก้ไขรายละเอียด meetup</v-btn>
+          <v-btn flat to="/managemeetup/edit">แก้ไขรายละเอียด meetup</v-btn>
           <v-spacer></v-spacer>
         </v-card-actions>
       </v-card>

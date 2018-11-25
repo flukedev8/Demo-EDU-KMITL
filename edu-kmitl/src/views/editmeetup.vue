@@ -67,7 +67,7 @@
      <v-layout>
       <v-card-actions>
       <v-spacer></v-spacer>
-      <v-btn color="orange darken-1" @click="create">สร้าง Meetup</v-btn>
+      <v-btn color="orange darken-1" @click="save">save Meetup</v-btn>
       </v-card-actions>
      </v-layout>
     </v-container>
@@ -78,16 +78,16 @@
 export default {
   data () {
     return {
-      title: '',
+      title: 'ชื่อ meetup ที่แก้ไข',
       date: '',
-      time: '',
-      location: '',
-      Abstract: '',
+      time: '09.00-12.00น.',
+      location: 'ตึกพระจอมเกล้า 102',
+      Abstract: 'ทดสอบเฉยๆ',
       image: ''
     }
   },
   methods: {
-    create () {
+    save () {
 
     }
   }
