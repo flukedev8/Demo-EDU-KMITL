@@ -14,16 +14,16 @@ export default {
     return {
       items: [
         {
-          src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg'
+          src: 'https://p-u.popcdn.net/events/covers/000/004/029/cover/EVP_Kilorun_Hanoi_Cover_Banner_851_x_400_px.jpg?1541064399'
         },
         {
-          src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg'
+          src: 'https://p-u.popcdn.net/events/covers/000/004/538/cover/2.3_cover_photo_copy.001.png?1541049777'
         },
         {
-          src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg'
+          src: 'https://p-u.popcdn.net/events/covers/000/004/615/cover/English_for_IT-02.jpg?1542091013'
         },
         {
-          src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg'
+          src: 'https://p-u.popcdn.net/events/covers/000/004/570/cover/add-1.jpg?1541479468'
         }
       ]
     }
