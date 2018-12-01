@@ -60,24 +60,34 @@
          <v-text-field
        prepend-icon="add_to_photos"
        name="image"
-        label="อัพโหลดไฟล์ภาพ"
-        type="file"
-        @change="onFileChange"
-        v-model="image"></v-text-field>
-        </v-form>
-    </v-flex>
-     <v-flex d-flex xs12 sm6 >
-        <v-textarea
+        label="ใส่ลิ้งค์รูปภาพ"
+        type="text"
+        v-model="img"></v-text-field>
+        <v-text-field
+       prepend-icon="add_to_photos"
+       name="image"
+        label="ใส่ลิ้งค์เอกสารประกอบ"
+        type="text"
+        v-model="img"></v-text-field>
+        <br>
+          <v-textarea
+          solo
+          name="Description"
+          label="รายละเอียดแบบสั้นๆ 100 ตัวอักษร"
+          value=""
+          :maxlength="max"
+          v-model="Descriptionshort"
+      ></v-textarea>
+      <br>
+      <v-textarea
           solo
           name="Description"
           label="รายละเอียด"
           value="รายละเอียด: "
           v-model="Description"
         ></v-textarea>
-      </v-flex>
-     </v-layout>
-     <v-layout>
-       <form v-on:submit.prevent="addNewTodo">
+    <br>
+     <form v-on:submit.prevent="addNewTodo">
     <label for="new-todo">ใส่ Link video จาก youtube</label>
     <v-text-field
       prepend-icon="add_to_queue"
@@ -94,14 +104,14 @@
       v-bind:key="todo.id"
       v-bind:title="todo.title"
       v-on:remove="todos.splice(index, 1)"
-    >{{todo.title}}<br></li>
+    >{{todo.id}} {{todo.title}} <v-btn @click="remove(index)">Remove</v-btn><br></li>
   </ul>
-     </v-layout>
-     <v-layout>
       <v-card-actions>
       <v-spacer></v-spacer>
       <v-btn color="orange darken-1" @click="create">สร้าง course</v-btn>
       </v-card-actions>
+      </v-form>
+     </v-flex>
      </v-layout>
     </v-container>
   </v-card>
@@ -118,7 +128,9 @@ export default {
       sector: '',
       faculty: '',
       Description: '',
-      image: '',
+      Descriptionshort: '',
+      img: '',
+      document: '',
       newTodoText: '',
       todos: [
         {
@@ -126,7 +138,8 @@ export default {
           title: 'link test'
         }
       ],
-      nextTodoId: 2
+      nextTodoId: 2,
+      max: 100
     }
   },
   methods: {
@@ -139,6 +152,9 @@ export default {
         title: this.newTodoText
       })
       this.newTodoText = ''
+    },
+    remove: function (index) {
+      this.todos.splice(index, 1)
     }
   }
 }
