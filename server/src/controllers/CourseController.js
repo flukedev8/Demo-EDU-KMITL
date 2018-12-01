@@ -3,7 +3,7 @@ const { Course } = require('../models')
 module.exports = {
   async index (req, res) {
     try {
-      const Courses = Course.findAll({
+      const Courses = await Course.findAll({
         limit: 8
       })
       res.send(Courses)
