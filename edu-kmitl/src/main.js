@@ -7,7 +7,7 @@ import store from './store'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 import VueYouTubeEmbed from 'vue-youtube-embed'
-
+// wow
 Vue.config.productionTip = false
 
 Vue.use(Vuetify)
